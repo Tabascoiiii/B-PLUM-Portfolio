@@ -23,10 +23,10 @@ describe("project routes", () => {
   it.each([
     [
       "cat-time-companion",
-      "Cat Time Companion",
+      "Desktop Time Companion",
       "A native macOS desktop companion that keeps clocks, stopwatches, and countdowns close at hand through a small cast of animated characters.",
-      "Cat Time Companion app icon",
-      ["Cat Time Companion for macOS"],
+      "Desktop Time Companion app icon",
+      ["Desktop Time Companion for macOS"],
     ],
     [
       "fusheng-records",
@@ -64,10 +64,10 @@ describe("project routes", () => {
   it.each([
     [
       "cat-time-companion",
-      "Cat Time Companion",
+      "Desktop Time Companion",
       "時計、ストップウォッチ、カウントダウンを、小さなキャラクターとともにデスクトップへ置いておけるネイティブmacOSアプリです。",
-      "Cat Time Companionのアプリアイコン",
-      ["macOS向けCat Time Companion"],
+      "Desktop Time Companionのアプリアイコン",
+      ["macOS向けDesktop Time Companion"],
     ],
     [
       "fusheng-records",
@@ -144,7 +144,7 @@ describe("project routes", () => {
     expect(screen.getByRole("link", { name: /previous project/i })).toHaveAttribute("href", "/en/projects/cat-time-companion");
   });
 
-  it("renders Cat Time Companion support actions without a repository link", () => {
+  it("renders Desktop Time Companion support actions without a repository link", () => {
     renderProject("/en/projects/cat-time-companion");
 
     const supportLink = screen.getByRole("link", { name: /^support/i });
@@ -155,7 +155,7 @@ describe("project routes", () => {
     expect(privacyLink).toHaveAttribute("rel", "noopener noreferrer");
     expect(screen.queryByRole("link", { name: /view repository/i })).not.toBeInTheDocument();
     expect(screen.getByText("Preparing for App Store release")).toBeInTheDocument();
-    expect(screen.getByAltText("Cat Time Companion app icon")).toHaveClass("object-contain");
+    expect(screen.getByAltText("Desktop Time Companion app icon")).toHaveClass("object-contain");
     expect(screen.getByRole("link", { name: /next project/i })).toHaveAttribute("href", "/en/projects/fusheng-records");
     expect(screen.getByRole("link", { name: /previous project/i })).toHaveAttribute("href", "/en/projects/plum-b");
   });

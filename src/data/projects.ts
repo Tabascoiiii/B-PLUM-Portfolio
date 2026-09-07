@@ -14,12 +14,12 @@ export const projects: Project[] = [
     featured: true,
     locales: {
       en: {
-        title: "Cat Time Companion",
+        title: "Desktop Time Companion",
         category: "Desktop App",
         summary: "A native macOS desktop companion that keeps clocks, stopwatches, and countdowns close at hand through a small cast of animated characters.",
-        coverImage: { alt: "Cat Time Companion app icon", caption: "Cat Time Companion for macOS" },
+        coverImage: { alt: "Desktop Time Companion app icon", caption: "Desktop Time Companion for macOS" },
         sections: [
-          { id: "context", title: "Context & goal", content: "Cat Time Companion began as an experiment in making everyday timekeeping feel present without becoming distracting. It lives directly on the macOS desktop and combines a clock, stopwatch, and countdown in one compact companion." },
+          { id: "context", title: "Context & goal", content: "Desktop Time Companion began as an experiment in making everyday timekeeping feel present without becoming distracting. It lives directly on the macOS desktop and combines a clock, stopwatch, and countdown in one compact companion." },
           { id: "contribution", title: "My contribution", content: "I defined the product, interaction model, visual direction, native macOS architecture, multilingual interface, and StoreKit purchase flow. I also built the release checks that keep bundled themes, product identifiers, privacy claims, and App Store metadata aligned." },
           { id: "decisions", title: "Experience & decisions", content: "The character is the window: it can be moved and resized without adding a conventional frame or menu-bar item. Frequently used controls stay close to the character, while size, language, sound, motion, and theme settings remain in focused panels. Two themes are free and two are independently unlockable." },
           { id: "implementation", title: "Implementation", content: "AppKit owns the transparent desktop widget and window behavior, while SwiftUI presents settings and the theme store. A Foundation-only domain layer calculates deterministic time state. StoreKit 2 verified entitlements are the only purchase authority; local preferences never act as proof of purchase." },
@@ -27,10 +27,10 @@ export const projects: Project[] = [
         ],
       },
       ja: {
-        title: "Cat Time Companion",
+        title: "Desktop Time Companion",
         category: "デスクトップアプリ",
         summary: "時計、ストップウォッチ、カウントダウンを、小さなキャラクターとともにデスクトップへ置いておけるネイティブmacOSアプリです。",
-        coverImage: { alt: "Cat Time Companionのアプリアイコン", caption: "macOS向けCat Time Companion" },
+        coverImage: { alt: "Desktop Time Companionのアプリアイコン", caption: "macOS向けDesktop Time Companion" },
         sections: [
           { id: "context", title: "背景と目標", content: "日常の時間管理を、気が散る道具ではなく、そばにいる存在にできないかと考えたことから始まりました。macOSのデスクトップに直接置き、時計、ストップウォッチ、カウントダウンを一つの小さなキャラクターにまとめています。" },
           { id: "contribution", title: "担当したこと", content: "製品定義、操作モデル、ビジュアル、macOSネイティブ構成、多言語UI、StoreKitの購入フローまで一貫して設計・実装しました。テーマ、商品ID、プライバシー表示、App Store用メタデータの整合性を確認するリリースチェックも構築しています。" },
@@ -40,12 +40,12 @@ export const projects: Project[] = [
         ],
       },
       zh: {
-        title: "Cat Time Companion",
+        title: "桌面时间伙伴",
         category: "桌面应用",
         summary: "一款原生 macOS 桌面时间伴侣，让时钟、正计时和倒计时通过一组小小的动态角色常驻手边。",
-        coverImage: { alt: "Cat Time Companion 应用图标", caption: "Cat Time Companion macOS 应用" },
+        coverImage: { alt: "桌面时间伙伴应用图标", caption: "桌面时间伙伴 macOS 应用" },
         sections: [
-          { id: "context", title: "背景与目标", content: "Cat Time Companion 始于一个小实验：能不能让日常计时保持在场，却不成为干扰。它直接待在 macOS 桌面上，将时钟、正计时和倒计时收进一个小巧的角色伴侣中。" },
+          { id: "context", title: "背景与目标", content: "桌面时间伙伴始于一个小实验：能不能让日常计时保持在场，却不成为干扰。它直接待在 macOS 桌面上，将时钟、正计时和倒计时收进一个小巧的角色伴侣中。" },
           { id: "contribution", title: "我的工作", content: "我完成了产品定义、交互模型、视觉方向、macOS 原生架构、多语言界面和 StoreKit 购买流程，并建立了发布检查，使内置主题、商品 ID、隐私声明与 App Store 元数据保持一致。" },
           { id: "decisions", title: "体验与设计判断", content: "角色本身就是窗口，无需传统边框或额外菜单栏图标也能移动和缩放。常用操作留在角色身边，尺寸、语言、声音、动态和主题等低频设置则收入专门页面。应用包含两个免费主题和两个可独立解锁的主题。" },
           { id: "implementation", title: "实现方式", content: "AppKit 负责透明桌面挂件和窗口行为，SwiftUI 负责设置与主题商店。仅依赖 Foundation 的领域层以可确定方式计算时间状态。付费权益只以 StoreKit 2 验证结果为准，本地偏好不会被当作购买证明。" },

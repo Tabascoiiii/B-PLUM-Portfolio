@@ -13,7 +13,7 @@ describe("project content", () => {
     ]);
   });
 
-  it("publishes Cat Time Companion support details without exposing its private repository", () => {
+  it("publishes Desktop Time Companion support details without exposing its private repository", () => {
     const project = getProject("cat-time-companion");
 
     expect(project?.platform).toBe("macOS 13+");
