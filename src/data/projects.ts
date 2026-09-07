@@ -3,14 +3,14 @@ import type { Project } from "../types/project";
 
 export const projects: Project[] = [
   {
-    slug: "cat-time-companion",
+    slug: "desktop-time-companion",
     year: "2026",
     status: "release-preparation",
     technologies: ["Swift", "AppKit", "SwiftUI", "StoreKit 2"],
     platform: "macOS 13+",
-    coverImage: { src: "/images/cat-time-companion/app-icon.png", fit: "contain" },
-    supportUrl: "https://b-plum.com/cat-time-companion/support/",
-    privacyPolicyUrl: "https://b-plum.com/cat-time-companion/privacy/",
+    coverImage: { src: "/images/desktop-time-companion/app-icon.png", fit: "contain" },
+    supportUrl: "https://b-plum.com/desktop-time-companion/support/",
+    privacyPolicyUrl: "https://b-plum.com/desktop-time-companion/privacy/",
     featured: true,
     locales: {
       en: {

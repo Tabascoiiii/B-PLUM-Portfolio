@@ -22,7 +22,7 @@ function renderProject(path: string, locale: Locale = "en") {
 describe("project routes", () => {
   it.each([
     [
-      "cat-time-companion",
+      "desktop-time-companion",
       "Desktop Time Companion",
       "A native macOS desktop companion that keeps clocks, stopwatches, and countdowns close at hand through a small cast of animated characters.",
       "Desktop Time Companion app icon",
@@ -63,7 +63,7 @@ describe("project routes", () => {
 
   it.each([
     [
-      "cat-time-companion",
+      "desktop-time-companion",
       "Desktop Time Companion",
       "時計、ストップウォッチ、カウントダウンを、小さなキャラクターとともにデスクトップへ置いておけるネイティブmacOSアプリです。",
       "Desktop Time Companionのアプリアイコン",
@@ -141,16 +141,16 @@ describe("project routes", () => {
     expect(repositoryLink).toHaveAttribute("target", "_blank");
     expect(repositoryLink).toHaveAttribute("rel", "noopener noreferrer");
     expect(screen.getByRole("link", { name: /next project/i })).toHaveAttribute("href", "/en/projects/easy-cat-minesweeper");
-    expect(screen.getByRole("link", { name: /previous project/i })).toHaveAttribute("href", "/en/projects/cat-time-companion");
+    expect(screen.getByRole("link", { name: /previous project/i })).toHaveAttribute("href", "/en/projects/desktop-time-companion");
   });
 
   it("renders Desktop Time Companion support actions without a repository link", () => {
-    renderProject("/en/projects/cat-time-companion");
+    renderProject("/en/projects/desktop-time-companion");
 
     const supportLink = screen.getByRole("link", { name: /^support/i });
     const privacyLink = screen.getByRole("link", { name: /^privacy policy/i });
-    expect(supportLink).toHaveAttribute("href", "https://b-plum.com/cat-time-companion/support/");
-    expect(privacyLink).toHaveAttribute("href", "https://b-plum.com/cat-time-companion/privacy/");
+    expect(supportLink).toHaveAttribute("href", "https://b-plum.com/desktop-time-companion/support/");
+    expect(privacyLink).toHaveAttribute("href", "https://b-plum.com/desktop-time-companion/privacy/");
     expect(supportLink).toHaveAttribute("target", "_blank");
     expect(privacyLink).toHaveAttribute("rel", "noopener noreferrer");
     expect(screen.queryByRole("link", { name: /view repository/i })).not.toBeInTheDocument();
@@ -188,7 +188,7 @@ describe("project routes", () => {
     expect(screen.getByText("Generated hexagram reading")).toBeInTheDocument();
     expect(screen.getByText("Empty input screen")).toBeInTheDocument();
     expect(screen.getByText("Completed input screen")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /next project/i })).toHaveAttribute("href", "/en/projects/cat-time-companion");
+    expect(screen.getByRole("link", { name: /next project/i })).toHaveAttribute("href", "/en/projects/desktop-time-companion");
     expect(screen.getByRole("link", { name: /previous project/i })).toHaveAttribute("href", "/en/projects/easy-cat-minesweeper");
   });
 
