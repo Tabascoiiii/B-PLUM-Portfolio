@@ -22,6 +22,13 @@ function renderProject(path: string, locale: Locale = "en") {
 describe("project routes", () => {
   it.each([
     [
+      "cat-time-companion",
+      "Cat Time Companion",
+      "A native macOS desktop companion that keeps clocks, stopwatches, and countdowns close at hand through a small cast of animated characters.",
+      "Cat Time Companion app icon",
+      ["Cat Time Companion for macOS"],
+    ],
+    [
       "fusheng-records",
       "B-PLUM-FushengRecords",
       "A ChatGPT and Codex plugin that turns memories and future wishes into collectible tickets, then stores them in a local interactive album modeled after traditional Chinese books.",
@@ -55,6 +62,13 @@ describe("project routes", () => {
   });
 
   it.each([
+    [
+      "cat-time-companion",
+      "Cat Time Companion",
+      "時計、ストップウォッチ、カウントダウンを、小さなキャラクターとともにデスクトップへ置いておけるネイティブmacOSアプリです。",
+      "Cat Time Companionのアプリアイコン",
+      ["macOS向けCat Time Companion"],
+    ],
     [
       "fusheng-records",
       "B-PLUM-FushengRecords",
@@ -127,6 +141,22 @@ describe("project routes", () => {
     expect(repositoryLink).toHaveAttribute("target", "_blank");
     expect(repositoryLink).toHaveAttribute("rel", "noopener noreferrer");
     expect(screen.getByRole("link", { name: /next project/i })).toHaveAttribute("href", "/en/projects/easy-cat-minesweeper");
+    expect(screen.getByRole("link", { name: /previous project/i })).toHaveAttribute("href", "/en/projects/cat-time-companion");
+  });
+
+  it("renders Cat Time Companion support actions without a repository link", () => {
+    renderProject("/en/projects/cat-time-companion");
+
+    const supportLink = screen.getByRole("link", { name: /^support/i });
+    const privacyLink = screen.getByRole("link", { name: /^privacy policy/i });
+    expect(supportLink).toHaveAttribute("href", "https://b-plum.com/cat-time-companion/support/");
+    expect(privacyLink).toHaveAttribute("href", "https://b-plum.com/cat-time-companion/privacy/");
+    expect(supportLink).toHaveAttribute("target", "_blank");
+    expect(privacyLink).toHaveAttribute("rel", "noopener noreferrer");
+    expect(screen.queryByRole("link", { name: /view repository/i })).not.toBeInTheDocument();
+    expect(screen.getByText("Preparing for App Store release")).toBeInTheDocument();
+    expect(screen.getByAltText("Cat Time Companion app icon")).toHaveClass("object-contain");
+    expect(screen.getByRole("link", { name: /next project/i })).toHaveAttribute("href", "/en/projects/fusheng-records");
     expect(screen.getByRole("link", { name: /previous project/i })).toHaveAttribute("href", "/en/projects/plum-b");
   });
 
@@ -158,7 +188,7 @@ describe("project routes", () => {
     expect(screen.getByText("Generated hexagram reading")).toBeInTheDocument();
     expect(screen.getByText("Empty input screen")).toBeInTheDocument();
     expect(screen.getByText("Completed input screen")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /next project/i })).toHaveAttribute("href", "/en/projects/fusheng-records");
+    expect(screen.getByRole("link", { name: /next project/i })).toHaveAttribute("href", "/en/projects/cat-time-companion");
     expect(screen.getByRole("link", { name: /previous project/i })).toHaveAttribute("href", "/en/projects/easy-cat-minesweeper");
   });
 
@@ -179,7 +209,7 @@ describe("home sections", () => {
     expect(screen.getByRole("heading", { name: "A space for ideas." })).toHaveAttribute("id", "about");
     expect(screen.getByRole("heading", { name: "Selected projects." })).toHaveAttribute("id", "works");
     expect(screen.getByText("Contact", { selector: "p" })).toHaveAttribute("id", "contact");
-    expect(screen.getByText("3", { selector: "span" })).toBeInTheDocument();
+    expect(screen.getByText("4", { selector: "span" })).toBeInTheDocument();
   });
 
   it("opens one support panel from the native homepage actions and closes it with Escape", () => {

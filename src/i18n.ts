@@ -75,10 +75,13 @@ export interface SiteCopy {
     stack: string;
     status: string;
     published: string;
+    releasePreparation: string;
     inProgress: string;
     comingSoon: string;
     repository: string;
     live: string;
+    support: string;
+    privacy: string;
     previous: string;
     next: string;
     nextLabel: string;
@@ -97,7 +100,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     works: { eyebrow: "Personal Projects", title: "Selected", accent: "projects.", github: "Check GitHub", viewProject: "View Project", comingSoon: "Coming Soon" },
     quote: "Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.",
     contact: { eyebrow: "Contact", heading: "Keep", accent: "In Touch.", crafted: "Crafting with passion", portfolio: "Personal Portfolio", supportTitle: "Support the work", supportLink: "Support my work", supportClose: "Close support panel", supportExternal: "Open in a new tab", supportFrameTitle: "Support b-plum on Buy Me a Coffee", qrAlt: "QR code to support b-plum on Buy Me a Coffee" },
-    project: { back: "Back to projects", caseStudy: "Case study", sectionsNav: "Project sections", platform: "Platform", stack: "Technology", status: "Status", published: "Published", inProgress: "In progress", comingSoon: "Coming soon", repository: "View repository", live: "Open project", previous: "Previous project", next: "Next project", nextLabel: "Next project", allWorks: "View all projects", interfaceFrames: "Interface frames" },
+    project: { back: "Back to projects", caseStudy: "Case study", sectionsNav: "Project sections", platform: "Platform", stack: "Technology", status: "Status", published: "Published", releasePreparation: "Preparing for App Store release", inProgress: "In progress", comingSoon: "Coming soon", repository: "View repository", live: "Open project", support: "Support", privacy: "Privacy policy", previous: "Previous project", next: "Next project", nextLabel: "Next project", allWorks: "View all projects", interfaceFrames: "Interface frames" },
     notFound: { label: "404 / Not found", title: "Quietly missing.", body: "This page could not be found.", home: "Return home" },
     seo: { homeTitle: "b-plum — Silent Narrative.", homeDescription: "A portfolio of personal projects where thoughtful programming, quiet visual design, and practical digital experiences meet.", notFoundTitle: "Page not found — b-plum" },
   },
@@ -108,7 +111,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     works: { eyebrow: "個人プロジェクト", title: "選び抜いた", accent: "作品。", github: "GitHubを見る", viewProject: "作品を見る", comingSoon: "近日公開" },
     quote: "完璧とは、これ以上加えるものがない状態ではなく、これ以上削るものがない状態のことである。",
     contact: { eyebrow: "連絡先", heading: "つながりを、", accent: "これからも。", crafted: "情熱を込めて制作", portfolio: "個人ポートフォリオ", supportTitle: "創作を応援する", supportLink: "創作を応援する", supportClose: "応援パネルを閉じる", supportExternal: "新しいタブで開く", supportFrameTitle: "Buy Me a Coffeeでb-plumを応援する", qrAlt: "Buy Me a Coffeeでb-plumを応援するQRコード" },
-    project: { back: "作品一覧へ戻る", caseStudy: "ケーススタディ", sectionsNav: "プロジェクトの各章", platform: "プラットフォーム", stack: "使用技術", status: "ステータス", published: "公開中", inProgress: "制作中", comingSoon: "近日公開", repository: "リポジトリを見る", live: "プロジェクトを開く", previous: "前の作品", next: "次の作品", nextLabel: "次の作品", allWorks: "すべての作品を見る", interfaceFrames: "インターフェース画面" },
+    project: { back: "作品一覧へ戻る", caseStudy: "ケーススタディ", sectionsNav: "プロジェクトの各章", platform: "プラットフォーム", stack: "使用技術", status: "ステータス", published: "公開中", releasePreparation: "App Store公開準備中", inProgress: "制作中", comingSoon: "近日公開", repository: "リポジトリを見る", live: "プロジェクトを開く", support: "サポート", privacy: "プライバシーポリシー", previous: "前の作品", next: "次の作品", nextLabel: "次の作品", allWorks: "すべての作品を見る", interfaceFrames: "インターフェース画面" },
     notFound: { label: "404 / 見つかりません", title: "静かに、見失いました。", body: "お探しのページは見つかりませんでした。", home: "ホームへ戻る" },
     seo: { homeTitle: "b-plum — Silent Narrative.", homeDescription: "思索を重ねたプログラミングと静かなビジュアルデザインが出会う、個人プロジェクトのポートフォリオ。", notFoundTitle: "ページが見つかりません — b-plum" },
   },
@@ -119,7 +122,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     works: { eyebrow: "个人项目", title: "精选", accent: "作品。", github: "查看 GitHub", viewProject: "查看项目", comingSoon: "即将发布" },
     quote: "完美，不是无可复加，而是无可删减。",
     contact: { eyebrow: "联系", heading: "保持", accent: "联系。", crafted: "以热爱持续创作", portfolio: "个人作品集", supportTitle: "支持这份创作", supportLink: "支持我的创作", supportClose: "关闭支持面板", supportExternal: "在新标签页打开", supportFrameTitle: "在 Buy Me a Coffee 上支持 b-plum", qrAlt: "在 Buy Me a Coffee 上支持 b-plum 的二维码" },
-    project: { back: "返回作品列表", caseStudy: "项目案例", sectionsNav: "项目章节", platform: "平台", stack: "技术栈", status: "状态", published: "已发布", inProgress: "进行中", comingSoon: "即将发布", repository: "查看代码仓库", live: "打开项目", previous: "上一个项目", next: "下一个项目", nextLabel: "下一个项目", allWorks: "查看全部项目", interfaceFrames: "界面展示" },
+    project: { back: "返回作品列表", caseStudy: "项目案例", sectionsNav: "项目章节", platform: "平台", stack: "技术栈", status: "状态", published: "已发布", releasePreparation: "App Store 上架准备中", inProgress: "进行中", comingSoon: "即将发布", repository: "查看代码仓库", live: "打开项目", support: "支持", privacy: "隐私政策", previous: "上一个项目", next: "下一个项目", nextLabel: "下一个项目", allWorks: "查看全部项目", interfaceFrames: "界面展示" },
     notFound: { label: "404 / 页面不存在", title: "这里安静地缺了一页。", body: "没有找到你要访问的页面。", home: "返回首页" },
     seo: { homeTitle: "b-plum — Silent Narrative.", homeDescription: "一个汇集个人项目的作品集，让审慎的编程、安静的视觉设计与实用的数字体验在此相遇。", notFoundTitle: "页面不存在 — b-plum" },
   },

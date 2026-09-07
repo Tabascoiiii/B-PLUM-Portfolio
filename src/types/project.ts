@@ -1,6 +1,6 @@
 import type { Locale } from "../i18n";
 
-export type ProjectStatus = "published" | "coming-soon";
+export type ProjectStatus = "published" | "release-preparation" | "coming-soon";
 
 export interface ProjectSection {
   id: string;
@@ -10,6 +10,7 @@ export interface ProjectSection {
 
 export interface ProjectImage {
   src: string;
+  fit?: "cover" | "contain";
 }
 
 export interface ProjectImageCopy {
@@ -36,6 +37,8 @@ export interface Project {
   gallery?: ProjectImage[];
   repositoryUrl?: string;
   liveUrl?: string;
+  supportUrl?: string;
+  privacyPolicyUrl?: string;
   featured: boolean;
   locales: Record<Locale, ProjectLocale>;
 }

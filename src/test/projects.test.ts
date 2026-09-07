@@ -4,12 +4,25 @@ import { getAdjacentProjects, getProject, getProjectLocale, projects } from "../
 describe("project content", () => {
   const caseStudySectionIds = ["context", "contribution", "decisions", "implementation", "outcome"];
 
-  it("keeps the three real projects in the intended order", () => {
+  it("keeps the four real projects in the intended order", () => {
     expect(projects.filter((project) => project.featured).map((project) => project.slug)).toEqual([
+      "cat-time-companion",
       "fusheng-records",
       "easy-cat-minesweeper",
       "plum-b",
     ]);
+  });
+
+  it("publishes Cat Time Companion support details without exposing its private repository", () => {
+    const project = getProject("cat-time-companion");
+
+    expect(project?.platform).toBe("macOS 13+");
+    expect(project?.status).toBe("release-preparation");
+    expect(project?.technologies).toEqual(["Swift", "AppKit", "SwiftUI", "StoreKit 2"]);
+    expect(project?.coverImage.fit).toBe("contain");
+    expect(project?.supportUrl).toBe("https://b-plum.com/cat-time-companion/support/");
+    expect(project?.privacyPolicyUrl).toBe("https://b-plum.com/cat-time-companion/privacy/");
+    expect(project?.repositoryUrl).toBeUndefined();
   });
 
   it("uses the shared case study structure for every project", () => {
@@ -48,6 +61,9 @@ describe("project content", () => {
     const localizedContent = (slug: string, locale: "en" | "ja") => getProject(slug)?.locales[locale].sections.map((section) => section.content).join(" ") ?? "";
 
     for (const locale of ["en", "ja"] as const) {
+      expect(localizedContent("cat-time-companion", locale)).toContain("AppKit");
+      expect(localizedContent("cat-time-companion", locale)).toContain("SwiftUI");
+      expect(localizedContent("cat-time-companion", locale)).toContain("StoreKit 2");
       expect(localizedContent("fusheng-records", locale)).toContain("Skill");
       expect(localizedContent("fusheng-records", locale)).toContain("`出票`");
       expect(localizedContent("fusheng-records", locale)).toContain("PNG/JSON");
@@ -63,11 +79,13 @@ describe("project content", () => {
   });
 
   it("returns circular previous and next projects", () => {
+    expect(getAdjacentProjects("cat-time-companion").next?.slug).toBe("fusheng-records");
+    expect(getAdjacentProjects("cat-time-companion").previous?.slug).toBe("plum-b");
     expect(getAdjacentProjects("fusheng-records").next?.slug).toBe("easy-cat-minesweeper");
-    expect(getAdjacentProjects("fusheng-records").previous?.slug).toBe("plum-b");
+    expect(getAdjacentProjects("fusheng-records").previous?.slug).toBe("cat-time-companion");
     expect(getAdjacentProjects("easy-cat-minesweeper").next?.slug).toBe("plum-b");
     expect(getAdjacentProjects("easy-cat-minesweeper").previous?.slug).toBe("fusheng-records");
-    expect(getAdjacentProjects("plum-b").next?.slug).toBe("fusheng-records");
+    expect(getAdjacentProjects("plum-b").next?.slug).toBe("cat-time-companion");
     expect(getAdjacentProjects("plum-b").previous?.slug).toBe("easy-cat-minesweeper");
   });
 });
